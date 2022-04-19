@@ -6,7 +6,7 @@ export interface GetReposQuery {
     per_page?: number;
 }
 
-export interface GetRepoQuery {
-    orgName?: string;
-    repoName?: string;
+export interface GetRepoParams {
+    org?: string;
+    repo?: string;
 }

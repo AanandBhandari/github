@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { GetReposQuery, GetRepoQuery} from '../interfaces/index.interface'
+import { GetReposQuery, GetRepoParams} from '../interfaces/index.interface'
 class GithubService {
 
   async getRepos(query = {}) {
@@ -23,8 +23,8 @@ class GithubService {
   }
 
   async getRepoDetail(query = {}) {
-    const {orgName, repoName} = query as GetRepoQuery
-    let result = await axios.get(`https://api.github.com/repos/${orgName}/${repoName}`)
+    const {org, repo} = query as GetRepoParams
+    let result = await axios.get(`https://api.github.com/repos/${org}/${repo}`)
     if (!result.data) {
       return null
     }

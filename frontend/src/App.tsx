@@ -1,25 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import 'bulma/css/bulma.min.css';
+import Axios from "axios";
+import Routes from "./routes";
+import ContextProvider from "./context";
+import { API_URL } from "./utils/Constant";
 function App() {
+  Axios.defaults.baseURL = API_URL;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextProvider>
+      <div className="container">
+          <Routes />
+      </div>
+    </ContextProvider>
   );
 }
 

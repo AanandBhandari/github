@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { failure, success } from "../utils/helper";
 import GithubService from "../services/GithubService";
-import { GetReposQuery, GetRepoQuery } from "../interfaces/index.interface";
+import { GetReposQuery, GetRepoParams } from "../interfaces/index.interface";
 
 const Github = new GithubService();
 
@@ -11,7 +11,7 @@ export const getRepos = async (req: Request, res: Response) => {
 }
 
 export const getRepoDetail = async (req: Request, res: Response) => {
-  let repo = await Github.getRepoDetail(req.query as GetRepoQuery);
+  let repo = await Github.getRepoDetail(req.params as GetRepoParams);
   if (!repo) {
     return res.json(failure("Repo not found"));
   }
