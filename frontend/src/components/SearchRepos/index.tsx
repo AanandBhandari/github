@@ -39,7 +39,8 @@ const SearchRepos = () => {
            <div className="card-content">
              <div className="content">
                {repo.description}
-               <a href="#">stars: {repo.stars}</a>. <a href="#">forks: {repo.forks}</a> <a href="#">watchers: {repo.watchers}</a>
+               <br/>
+               <a href="#">stars: {repo.stars}</a> <a href="#">forks: {repo.forks}</a> <a href="#">watchers: {repo.watchers}</a>
                <br/>
                <time>11:09 PM - 1 Jan 2016</time>
              </div>
